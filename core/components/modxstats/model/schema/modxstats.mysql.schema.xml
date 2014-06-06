@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="modxstats" baseClass="xPDOSimpleObject" platform="mysql" defaultEngine="MyISAM" version="1.1">
+
+    <object class="msGithubIssues" table="modxstats_github_issues">
+        <field key="collected_on" dbtype="int" precision="15" phptype="int" null="false" default="0" index="index" />
+
+        <field key="open" dbtype="int" precision="10" phptype="int" default="0" null="false" />
+        <field key="open_pulls" dbtype="int" precision="10" phptype="int" default="0" null="false" />
+        <field key="closed" dbtype="varchar" precision="10" phptype="int" default="0" null="false" />
+        <field key="closed_pulls" dbtype="varchar" precision="10" phptype="int" default="0" null="false" />
+
+        <!--<composite alias="Votes" class="gbmVote" local="id" foreign="nominee" cardinality="many" owner="local" />
+        <aggregate alias="NominatedBy" class="modUser" local="nominated_by" foreign="id" cardinality="one" owner="foreign" />-->
+    </object>
+
+    <object class="msForumTotals" table="modxstats_forum_totals">
+        <field key="collected_on" dbtype="int" precision="15" phptype="int" null="false" default="0" index="index" />
+        <field key="recent_posts" dbtype="int" precision="10" phptype="int" default="0" null="false" />
+        <field key="posts" dbtype="int" precision="10" phptype="int" default="0" null="false" />
+        <field key="threads" dbtype="int" precision="10" phptype="int" default="0" null="false" />
+        <field key="members" dbtype="int" precision="10" phptype="int" default="0" null="false" />
+    </object>
+</model>
