@@ -6,7 +6,7 @@ Collects a number of stats about the MODX project and community and outputs them
 Installation
 ============
 
-To install modxStats, you'll need a working MODX 2.x installation running (Scheduler from modmore)[https://www.modmore.com/extras/scheduler/].
+To install modxStats, you'll need a working MODX 2.x installation running [Scheduler from modmore](https://www.modmore.com/extras/scheduler/).
 
 Clone the repository and create a config.core.php file in the root. Point it to your MODX core folder. **In the browser**, open the `_bootstrap/index.php` file. This will set up some settings and elements for a quick setup.
 
