@@ -95,7 +95,7 @@ if ($scheduler) {
     }
 }
 
-/*if (!createObject('modCategory', array(
+if (!createObject('modCategory', array(
     'category' => 'modxStats',
     'parent' => 0,
 ), 'category', false)) {
@@ -106,20 +106,20 @@ $categoryId = 0;
 $category = $modx->getObject('modCategory', array('category' => 'modxStats'));
 if ($category) {
     $categoryId = $category->get('id');
-}*/
+}
 
 /**
  * Snippets
  * @var modSnippet $snippet
  */
-/*if (!createObject('modSnippet', array(
+if (!createObject('modSnippet', array(
     'name' => 'modxStats',
     'static' => true,
     'static_file' => '[[++modxstats.core_path]]elements/snippets/modxstats.snippet.php',
     'category' => $categoryId,
 ), 'name', false)) {
     echo "Error creating snippet.\n";
-}*/
+}
 
 /**
  * Plugins

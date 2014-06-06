@@ -22,6 +22,12 @@ class modxStats
      */
     public $config = array();
     /**
+     * Array of cached chunks
+     *
+     * @var array
+     */
+    public $chunks = array();
+    /**
      * xPDO Cache Manager configuration
      *
      * @var array
@@ -58,6 +64,61 @@ class modxStats
             'managerUrl' => $managerUrl,
         ), $config);
         $this->modx->addPackage('modxstats', $this->config['modelPath']);
+    }
+
+    /**
+     * Gets a Chunk and caches it; defaults to file based chunks.
+     *
+     * @access public
+     * @param string $name The name of the Chunk
+     * @param array $properties The properties for the Chunk
+     * @param string $type
+     * @return string The processed content of the Chunk
+     * @author Shaun "splittingred" McCormick
+     */
+    public function getChunk($name, $properties = array(), $type = '') {
+        $chunk = null;
+        if (!isset($this->chunks[$name])) {
+            if (!empty($type)) {
+                $chunk = $this->_getTplChunk($name . '_' . $type);
+            }
+            if (empty($chunk)) {
+                $chunk = $this->_getTplChunk($name);
+            }
+            if (empty($chunk)) {
+                $chunk = $this->modx->getObject('modChunk',array('name' => $name),true);
+                if ($chunk == false) return false;
+            }
+            $this->chunks[$name] = $chunk->getContent();
+        } else {
+            $o = $this->chunks[$name];
+            $chunk = $this->modx->newObject('modChunk');
+            $chunk->setContent($o);
+        }
+        $chunk->setCacheable(false);
+        return $chunk->process($properties);
+    }
+
+    /**
+    * Returns a modChunk object from a template file.
+    *
+    * @access private
+    * @param string $name The name of the Chunk. Will parse to name.chunk.tpl
+    * @param string $postFix The postfix to append to the name
+    * @return modChunk/boolean Returns the modChunk object if found, otherwise false.
+    * @author Shaun "splittingred" McCormick
+    */
+    private function _getTplChunk($name,$postFix = '.chunk.tpl') {
+        $chunk = false;
+        $f = $this->config['elementsPath'].'chunks/'.strtolower($name).$postFix;
+        if (file_exists($f)) {
+            $o = file_get_contents($f);
+            /* @var modChunk $chunk */
+            $chunk = $this->modx->newObject('modChunk');
+            $chunk->set('name',$name);
+            $chunk->setContent($o);
+        }
+        return $chunk;
     }
 }
 
