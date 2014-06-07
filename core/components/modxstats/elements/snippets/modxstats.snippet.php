@@ -8,6 +8,7 @@ $path = $modx->getOption('modxstats.core_path', null, $modx->getOption('core_pat
 $modxstats = $modx->getService('modxstats', 'modxStats', $path . 'model/modxstats/');
 
 $phs = array();
+$phs['assets_url'] = $modxstats->config['assetsUrl'];
 
 // Grab forum stats
 $fs = array();

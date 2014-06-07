@@ -1,0 +1,64 @@
+body {
+  background-color: #eee;
+  color: #333;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  padding: 15px;
+
+  h1 {
+
+  }
+}
+
+.block-wrapper {
+  padding: 0 0 15px 15px;
+  overflow: hidden; // reset float
+}
+
+.block {
+  &:nth-child(odd) {
+    clear: left;
+  }
+  width: 50%;
+  padding: 15px 15px 0 0;
+  float: left;
+
+  .inner {
+    border: 1px solid #ccc;
+    background-color: #ddd;
+    padding: 15px;
+  }
+
+  h2 {
+
+  }
+
+  .description {
+
+  }
+}
+
+.graph-container {
+  position: relative;
+
+  .chart {
+    position: relative;
+    left: 50px;
+    width: 100%;
+    height: 250px;
+  }
+
+  .y_axis {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+  }
+}
