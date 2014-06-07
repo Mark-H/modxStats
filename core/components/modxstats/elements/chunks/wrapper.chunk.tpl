@@ -10,7 +10,14 @@
 <body>
 
 <header>
-    <h1>MODX Community Statistics</h1>
+    <h1>MODX Community Statistics <span style="color:#777;font-size:70%;">as of June 7th, 2014</span> </h1>
+    <p>Every hour a script is fired to collect some key metrics from the MODX forums. These are stored and shown to you, right here. Help improve this page! <a href="https://github.com/Mark-H/modxStats">Fork the repo on GitHub</a>, pull requests are very welcome.</p>
+    <p>Some welcome improvements include..</p>
+    <ul>
+        <li>Connection with Github to keep track of the number of open and closed issues and pull requests</li>
+        <li>Better design (well, *any* design really)</li>
+        <li>Perhaps a way to download data; it is currently shown at the bottom in a simple table, but that will become unwieldy as more data is collected.</li>
+    </ul>
 </header>
 
 <div class="block-wrapper">
