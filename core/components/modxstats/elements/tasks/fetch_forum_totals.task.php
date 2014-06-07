@@ -6,8 +6,8 @@
  * @var array $scriptProperties
  */
 
-// Repeat in 24 hours
-$task->schedule('+24 hours');
+// Repeat in a hour
+$task->schedule('+1 hours');
 
 // Grab modxStats for the model
 $path = $modx->getOption('modxstats.core_path', null, $modx->getOption('core_path') . 'components/modxstats/');
