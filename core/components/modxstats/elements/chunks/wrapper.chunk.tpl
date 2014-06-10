@@ -83,23 +83,42 @@
     </div>
 </div>
 
-<h3>Raw Stats</h3>
-<table>
-    <thead>
-    <tr>
-        <td>Date</td>
-        <td>Posts in last 42 days</td>
-        <td>Post Count</td>
-        <td>Thread Count</td>
-        <td>Member Count</td>
-    </tr>
-    </thead>
-    <tbody>
-        [[+forum_totals]]
-    </tbody>
-</table>
-
-
+<div class="block-wrapper">
+    <div class="block block-raw-forum-stats">
+        <h3>Raw Forum Stats</h3>
+        <table>
+            <thead>
+            <tr>
+                <td>Date</td>
+                <td>Posts in last 42 days</td>
+                <td>Post Count</td>
+                <td>Thread Count</td>
+                <td>Member Count</td>
+            </tr>
+            </thead>
+            <tbody>
+                [[+forum_stats]]
+            </tbody>
+        </table>
+    </div>
+    <div class="block block-raw-github-stats">
+        <h3>Raw GitHub Stats</h3>
+        <table>
+            <thead>
+            <tr>
+                <td>Date</td>
+                <td>Open Issues</td>
+                <td>Open Pull Requests</td>
+                <td>Closed Issues</td>
+                <td>Closed Pull Requests</td>
+            </tr>
+            </thead>
+            <tbody>
+                [[+github_stats]]
+            </tbody>
+        </table>
+    </div>
+</div>
 
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="[[+assets_url]]/rickshaw/vendor/d3.min.js"></script>
