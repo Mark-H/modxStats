@@ -89,7 +89,16 @@ if ($scheduler) {
         'content' => 'elements/tasks/fetch_forum_totals.task.php',
         'namespace' => 'modxstats',
         'reference' => 'fetch_forum_totals',
-        'description' => 'Pokes the client after 14 days if they haven\'t made any purchases yet'
+        'description' => 'Fetches a number of statistics from the MODX forums.'
+    ), 'reference', true)) {
+        echo "Error creating sTask object";
+    }
+    if (!createObject('sFileTask', array(
+        'class_key' => 'sFileTask',
+        'content' => 'elements/tasks/fetch_github_stats.task.php',
+        'namespace' => 'modxstats',
+        'reference' => 'fetch_github_stats',
+        'description' => 'Fetches the number of open/closed issues and pull requests.'
     ), 'reference', true)) {
         echo "Error creating sTask object";
     }
