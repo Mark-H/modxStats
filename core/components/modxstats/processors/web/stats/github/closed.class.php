@@ -23,6 +23,12 @@ class modxStatsWebStatsGithubClosedProcessor extends modObjectGetListProcessor {
      * @return mixed
      */
     public function process() {
+        $key = 'processors/github/' . implode('_', array_keys($this->series));
+        $cached = $this->modx->getCacheManager()->get($key, array(
+            xPDO::OPT_CACHE_KEY => 'modxstats'
+        ));
+        if (!empty($cached)) return $cached;
+
         $beforeQuery = $this->beforeQuery();
         if ($beforeQuery !== true) {
             return $this->failure($beforeQuery);
@@ -47,7 +53,13 @@ class modxStatsWebStatsGithubClosedProcessor extends modObjectGetListProcessor {
                 'data' => $this->seriesData[$fld]
             );
         }
-        return $this->modx->toJSON($output);
+
+        $output = $this->modx->toJSON($output);
+
+        $this->modx->cacheManager->set($key, $output, 0, array(
+            xPDO::OPT_CACHE_KEY => 'modxstats'
+        ));
+        return $output;
     }
 
     /**

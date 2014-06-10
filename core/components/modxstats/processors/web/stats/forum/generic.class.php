@@ -11,6 +11,23 @@ class modxStatsWebStatsForumGenericProcessor extends modObjectGetListProcessor {
     public $seriesName = '';
 
     /**
+     * {@inheritDoc}
+     * @return mixed
+     */
+    public function process() {
+        $cached = $this->modx->getCacheManager()->get('processors/forum/' . $this->valueField, array(
+            xPDO::OPT_CACHE_KEY => 'modxstats'
+        ));
+        if (!empty($cached)) return $cached;
+
+        $data = parent::process();
+        $this->modx->cacheManager->set('processors/forum/' . $this->valueField, $data, 0, array(
+            xPDO::OPT_CACHE_KEY => 'modxstats'
+        ));
+        return $data;
+    }
+
+    /**
      * @param xPDOQuery $c
      * @return xPDOQuery
      */

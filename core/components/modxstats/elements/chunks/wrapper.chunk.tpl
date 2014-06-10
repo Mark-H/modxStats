@@ -189,23 +189,21 @@ $(document).on('ready', function() {
     ]);
     newGraph($('#graph-total-github-open'), '[[+assets_url]]connector.php?action=web/stats/github/open', [
         {
+            name: 'Open Pull Requests',
+            color: '#0c0502'
+        },{
             name: 'Open Issues',
             color: '#c05020'
         },
-        {
-            name: 'Open Pull Requests',
-            color: '#0c0502'
-        }
     ]);
     newGraph($('#graph-total-github-closed'), '[[+assets_url]]connector.php?action=web/stats/github/closed', [
         {
+            name: 'Closed Pull Requests',
+            color: '#0c0502'
+        },{
             name: 'Closed Issues',
             color: '#c05020'
         },
-        {
-            name: 'Closed Pull Requests',
-            color: '#0c0502'
-        }
     ]);
 
     function formatNumber(num) {
