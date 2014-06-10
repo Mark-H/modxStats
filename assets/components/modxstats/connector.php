@@ -13,6 +13,8 @@ $webActions = array(
     'web/stats/forum/posts',
     'web/stats/forum/threads',
     'web/stats/forum/members',
+    'web/stats/github/open',
+    'web/stats/github/closed',
 );
 if (!empty($_REQUEST['action']) && in_array($_REQUEST['action'], $webActions)) {
     define('MODX_REQP',false);

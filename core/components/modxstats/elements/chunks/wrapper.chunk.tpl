@@ -61,6 +61,26 @@
             </div>
         </div>
     </div>
+    <div class="block block-number-github-open">
+        <div class="inner">
+            <h2>Open Issues & Pull Requests</h2>
+            <p class="description">Find out what issues and pull requests are waiting to be addressed.</p>
+            <div class="graph-container" id="graph-total-github-open">
+                <div class="y_axis"></div>
+                <div class="chart"></div>
+            </div>
+        </div>
+    </div>
+    <div class="block block-number-github-closed">
+        <div class="inner">
+            <h2>Closed Issues & Pull Requests</h2>
+            <p class="description">Shows you recent activity in terms of closing issues and pull requests.</p>
+            <div class="graph-container" id="graph-total-github-closed">
+                <div class="y_axis"></div>
+                <div class="chart"></div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <h3>Raw Stats</h3>
@@ -146,6 +166,26 @@ $(document).on('ready', function() {
         {
             name: 'Threads',
             color: '#c05020'
+        }
+    ]);
+    newGraph($('#graph-total-github-open'), '[[+assets_url]]connector.php?action=web/stats/github/open', [
+        {
+            name: 'Open Issues',
+            color: '#c05020'
+        },
+        {
+            name: 'Open Pull Requests',
+            color: '#0c0502'
+        }
+    ]);
+    newGraph($('#graph-total-github-closed'), '[[+assets_url]]connector.php?action=web/stats/github/closed', [
+        {
+            name: 'Closed Issues',
+            color: '#c05020'
+        },
+        {
+            name: 'Closed Pull Requests',
+            color: '#0c0502'
         }
     ]);
 
