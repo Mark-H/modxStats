@@ -7,7 +7,6 @@
  */
 
 // Repeat in an hour
-$task->schedule(time()); //@fixme
 $task->schedule('+59 minutes');
 
 // Grab modxStats for the model
