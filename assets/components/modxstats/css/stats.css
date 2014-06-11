@@ -27,13 +27,13 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: white;
   color: #333333;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Verdana, Geneva, sans-serif;
   font-size: 1em;
   line-height: 1.5;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Verdana, Geneva, sans-serif;
   line-height: 1.25em;
   margin: 0;
   text-rendering: optimizeLegibility;
@@ -121,7 +121,7 @@ input,
 label,
 select {
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Verdana, Geneva, sans-serif;
   font-size: 1em;
 }
 
@@ -149,7 +149,7 @@ select[multiple=multiple] {
   border-radius: 0.1875em;
   border: 1px solid #dddddd;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Verdana, Geneva, sans-serif;
   font-size: 1em;
   margin-bottom: 0.75em;
   padding: 0.5em 0.5em;
@@ -250,19 +250,89 @@ input[type="submit"] {
   white-space: nowrap;
 }
 
+/* component */
+table td {
+  padding: 0.5em 1em;
+}
+table thead td {
+  font-weight: bold;
+  font-size: 80%;
+}
+table tbody tr {
+  -webkit-transition: background-color, 180ms ease-in;
+  -moz-transition: background-color, 180ms ease-in;
+  transition: background-color, 180ms ease-in;
+}
+table tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+table tbody tr:hover {
+  background-color: rgba(31, 74, 127, 0.9);
+  color: white;
+}
+
 body {
-  background-color: #eee;
-  color: #333;
-  padding: 0;
+  padding-top: 6em 0 0 0;
   margin: 0;
 }
 
-* {
-  box-sizing: border-box;
+.vanity .focus {
+  *zoom: 1;
+  max-width: 75em;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0 auto;
+}
+.vanity .focus:before, .vanity .focus:after {
+  content: " ";
+  display: table;
+}
+.vanity .focus:after {
+  clear: both;
+}
+.vanity .focus.padded {
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
-header {
-  padding: 15px;
+h1, h2, h3, h4, h5, h6 {
+  color: #1f4a7f;
+  margin-bottom: 1em;
+}
+.full-strip h1, .full-strip h2, .full-strip h3, .full-strip h4, .full-strip h5, .full-strip h6 {
+  color: white;
+  line-height: 1.6em;
+  margin: 0;
+}
+
+.title-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+}
+
+h1 time {
+  float: right;
+  font-size: 0.4em;
+}
+
+body {
+  background-color: #eee;
+  color: #333;
+}
+
+.full-strip {
+  background: #1f4a7f;
+  color: white;
+  padding: 0.25em 0.5em 0 0.5em;
+  border-bottom: 4px solid #2A5182;
+  box-shadow: 0 0 6px rgba(10, 10, 10, 0.96);
+}
+.full-strip time {
+  color: #eee;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .block-wrapper {
@@ -280,7 +350,7 @@ header {
 }
 .block .inner {
   border: 1px solid #ccc;
-  background-color: #C1C1C1;
+  background-color: white;
   padding: 15px;
 }
 

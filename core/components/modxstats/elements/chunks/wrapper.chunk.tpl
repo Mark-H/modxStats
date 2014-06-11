@@ -10,115 +10,129 @@
 <body>
 
 <header>
-    <h1>MODX Community Statistics <span style="color:#777;font-size:70%;">as of June 7th, 2014</span> </h1>
-    <p>Every hour a script is fired to collect some key metrics from the MODX forums. These are stored and shown to you, right here. Help improve this page! <a href="https://github.com/Mark-H/modxStats">Fork the repo on GitHub</a>, pull requests are very welcome.</p>
-    <p>Some welcome improvements include..</p>
-    <ul>
-        <li>Connection with Github to keep track of the number of open and closed issues and pull requests</li>
-        <li>Better design (well, *any* design really)</li>
-        <li>Perhaps a way to download data; it is currently shown at the bottom in a simple table, but that will become unwieldy as more data is collected.</li>
-    </ul>
+    <div class="full-strip vanity title-bar">
+        <div class="focus">
+            <h1>MODX Community Statistics <time>June 7th, 2014</time> </h1>
+        </div>
+    </div>
+    <div class="vanity">
+        <div class="focus padded">
+            <p>Every hour a script is fired to collect some key metrics from the MODX forums. These are stored and shown to you, right here. Help improve this page! <a href="https://github.com/Mark-H/modxStats">Fork the repo on GitHub</a>, pull requests are very welcome.</p>
+            <p>Some welcome improvements include..</p>
+            <ul>
+                <li>Connection with Github to keep track of the number of open and closed issues and pull requests</li>
+                <li>Better design (well, *any* design really)</li>
+                <li>Perhaps a way to download data; it is currently shown at the bottom in a simple table, but that will become unwieldy as more data is collected.</li>
+            </ul>
+        </div>
+    </div>
 </header>
 
-<div class="block-wrapper">
-    <div class="block block-recent-posts">
-        <div class="inner">
-            <h2>Number of Recent Posts</h2>
-            <p class="description">The Recent Posts forum page shows all posts that happened in the last 42 days. By keeping track of this metric you can get a good idea of the long term continued activity and how this fluctuates over time. </p>
-            <div class="graph-container" id="graph-recent-posts">
-                <div class="y_axis"></div>
-                <div class="chart"></div>
+<main class="vanity">
+    <div class="focus">
+        <div class="block-wrapper">
+            <div class="block block-recent-posts">
+                <div class="inner">
+                    <h2>Number of Recent Posts</h2>
+                    <p class="description">The Recent Posts forum page shows all posts that happened in the last 42 days. By keeping track of this metric you can get a good idea of the long term continued activity and how this fluctuates over time. </p>
+                    <div class="graph-container" id="graph-recent-posts">
+                        <div class="y_axis"></div>
+                        <div class="chart"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="block block-number-members">
+                <div class="inner">
+                    <h2>Number of Members</h2>
+                    <p class="description">The absolute number of registered users on the MODX forums. </p>
+                    <div class="graph-container" id="graph-total-members">
+                        <div class="y_axis"></div>
+                        <div class="chart"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="block block-number-posts">
+                <div class="inner">
+                    <h2>Number of Posts</h2>
+                    <p class="description">The absolute number of posts. </p>
+                    <div class="graph-container" id="graph-total-posts">
+                        <div class="y_axis"></div>
+                        <div class="chart"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="block block-number-threads">
+                <div class="inner">
+                    <h2>Number of Threads</h2>
+                    <p class="description">The absolute number of threads on the forum. </p>
+                    <div class="graph-container" id="graph-total-threads">
+                        <div class="y_axis"></div>
+                        <div class="chart"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="block block-number-github-open">
+                <div class="inner">
+                    <h2>Open Issues & Pull Requests</h2>
+                    <p class="description">Find out what issues and pull requests are waiting to be addressed.</p>
+                    <div class="graph-container" id="graph-total-github-open">
+                        <div class="y_axis"></div>
+                        <div class="chart"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="block block-number-github-closed">
+                <div class="inner">
+                    <h2>Closed Issues & Pull Requests</h2>
+                    <p class="description">Shows you recent activity in terms of closing issues and pull requests.</p>
+                    <div class="graph-container" id="graph-total-github-closed">
+                        <div class="y_axis"></div>
+                        <div class="chart"></div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="block block-number-members">
-        <div class="inner">
-            <h2>Number of Members</h2>
-            <p class="description">The absolute number of registered users on the MODX forums. </p>
-            <div class="graph-container" id="graph-total-members">
-                <div class="y_axis"></div>
-                <div class="chart"></div>
-            </div>
-        </div>
-    </div>
-    <div class="block block-number-posts">
-        <div class="inner">
-            <h2>Number of Posts</h2>
-            <p class="description">The absolute number of posts. </p>
-            <div class="graph-container" id="graph-total-posts">
-                <div class="y_axis"></div>
-                <div class="chart"></div>
-            </div>
-        </div>
-    </div>
-    <div class="block block-number-threads">
-        <div class="inner">
-            <h2>Number of Threads</h2>
-            <p class="description">The absolute number of threads on the forum. </p>
-            <div class="graph-container" id="graph-total-threads">
-                <div class="y_axis"></div>
-                <div class="chart"></div>
-            </div>
-        </div>
-    </div>
-    <div class="block block-number-github-open">
-        <div class="inner">
-            <h2>Open Issues & Pull Requests</h2>
-            <p class="description">Find out what issues and pull requests are waiting to be addressed.</p>
-            <div class="graph-container" id="graph-total-github-open">
-                <div class="y_axis"></div>
-                <div class="chart"></div>
-            </div>
-        </div>
-    </div>
-    <div class="block block-number-github-closed">
-        <div class="inner">
-            <h2>Closed Issues & Pull Requests</h2>
-            <p class="description">Shows you recent activity in terms of closing issues and pull requests.</p>
-            <div class="graph-container" id="graph-total-github-closed">
-                <div class="y_axis"></div>
-                <div class="chart"></div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="block-wrapper">
-    <div class="block block-raw-forum-stats">
-        <h3>Raw Forum Stats</h3>
-        <table>
-            <thead>
-            <tr>
-                <td>Date</td>
-                <td>Posts in last 42 days</td>
-                <td>Post Count</td>
-                <td>Thread Count</td>
-                <td>Member Count</td>
-            </tr>
-            </thead>
-            <tbody>
-                [[+forum_stats]]
-            </tbody>
-        </table>
+        <div class="block-wrapper">
+            <div class="block-raw-forum-stats">
+                <h3>Raw Forum Stats</h3>
+                <table>
+                    <thead>
+                    <tr>
+                        <td>Date</td>
+                        <td>Posts in last 42 days</td>
+                        <td>Post Count</td>
+                        <td>Thread Count</td>
+                        <td>Member Count</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        [[+forum_stats]]
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="block-wrapper">
+            <div class="block-raw-github-stats">
+                <h3>Raw GitHub Stats</h3>
+                <table>
+                    <thead>
+                    <tr>
+                        <td>Date</td>
+                        <td>Open Issues</td>
+                        <td>Open Pull Requests</td>
+                        <td>Closed Issues</td>
+                        <td>Closed Pull Requests</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        [[+github_stats]]
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-    <div class="block block-raw-github-stats">
-        <h3>Raw GitHub Stats</h3>
-        <table>
-            <thead>
-            <tr>
-                <td>Date</td>
-                <td>Open Issues</td>
-                <td>Open Pull Requests</td>
-                <td>Closed Issues</td>
-                <td>Closed Pull Requests</td>
-            </tr>
-            </thead>
-            <tbody>
-                [[+github_stats]]
-            </tbody>
-        </table>
-    </div>
-</div>
+</main>
 
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="[[+assets_url]]/rickshaw/vendor/d3.min.js"></script>
