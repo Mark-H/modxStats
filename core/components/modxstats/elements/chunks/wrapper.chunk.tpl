@@ -40,7 +40,7 @@
                     <div class="graph-container" id="graph-recent-posts">
                         <div class="y_axis"></div>
                         <div class="chart"></div>
-                        <noscript>We're sorry, your browser does not support SVG graphics. <a href="http://caniuse.com/svg">Learn&nbsp;more</a>.</noscript>
+                        <noscript>Please enable JavaScript to view our lovely SVG charts.</noscript>
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@
                     <div class="graph-container" id="graph-total-members">
                         <div class="y_axis"></div>
                         <div class="chart"></div>
-                        <noscript>We're sorry, your browser does not support SVG graphics. <a href="http://caniuse.com/svg">Learn&nbsp;more</a>.</noscript>
+                        <noscript>Please enable JavaScript to view our lovely SVG charts.</noscript>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
                     <div class="graph-container" id="graph-total-posts">
                         <div class="y_axis"></div>
                         <div class="chart"></div>
-                        <noscript>We're sorry, your browser does not support SVG graphics. <a href="http://caniuse.com/svg">Learn&nbsp;more</a>.</noscript>
+                        <noscript>Please enable JavaScript to view our lovely SVG charts.</noscript>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                     <div class="graph-container" id="graph-total-threads">
                         <div class="y_axis"></div>
                         <div class="chart"></div>
-                        <noscript>We're sorry, your browser does not support SVG graphics. <a href="http://caniuse.com/svg">Learn&nbsp;more</a>.</noscript>
+                        <noscript>Please enable JavaScript to view our lovely SVG charts.</noscript>
                     </div>
                 </div>
             </div>
@@ -84,7 +84,7 @@
                     <div class="graph-container" id="graph-total-github-open">
                         <div class="y_axis"></div>
                         <div class="chart"></div>
-                        <noscript>We're sorry, your browser does not support SVG graphics. <a href="http://caniuse.com/svg">Learn&nbsp;more</a>.</noscript>
+                        <noscript>Please enable JavaScript to view our lovely SVG charts.</noscript>
                     </div>
                 </div>
             </div>
@@ -95,7 +95,7 @@
                     <div class="graph-container" id="graph-total-github-closed">
                         <div class="y_axis"></div>
                         <div class="chart"></div>
-                        <noscript>We're sorry, your browser does not support SVG graphics. <a href="http://caniuse.com/svg">Learn&nbsp;more</a>.</noscript>
+                        <noscript>Please enable JavaScript to view our lovely SVG charts.</noscript>
                     </div>
                 </div>
             </div>
