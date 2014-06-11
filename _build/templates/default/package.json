@@ -18,15 +18,24 @@
   },
   "devDependencies": {
     "grunt-bower-task": "~0.3.2",
-    "grunt-contrib-copy": "^0.4.1",
-    "grunt-contrib-watch": "^0.5.3",
+    "grunt-cache-bust": "^0.3.9",
     "grunt-contrib-clean": "~0.5.0",
-    "grunt-growl": "~0.1.5",
-    "grunt-contrib-cssmin": "^0.6.2",
-    "grunt-contrib-csslint": "^0.1.2",
     "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-copy": "^0.4.1",
+    "grunt-contrib-csslint": "^0.1.2",
+    "grunt-contrib-cssmin": "^0.6.2",
+    "grunt-contrib-sass": "^0.5.1",
     "grunt-contrib-uglify": "^0.2.7",
-    "grunt-contrib-sass": "^0.5.1"
+    "grunt-contrib-watch": "^0.5.3",
+    "grunt-growl": "~0.1.5",
+    "grunt-replace": "^0.7.8"
   },
-  "keywords": ["MODX","modmore","scheduler","CRON","task","automator"]
+  "keywords": [
+    "MODX",
+    "modmore",
+    "scheduler",
+    "CRON",
+    "task",
+    "automator"
+  ]
 }

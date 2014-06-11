@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <title>MODX Community Statistics</title>
 
-    <link href="[[+assets_url]]css/stats.css" rel="stylesheet">
-    <link href="[[+assets_url]]rickshaw/rickshaw.min.css" rel="stylesheet">
+    <link href="[[+assets_url]]css/stats.css?ad5372cb491c2527" rel="stylesheet">
+    <link href="[[+assets_url]]rickshaw/rickshaw.min.css?48a108292e153ef3" rel="stylesheet">
 </head>
 <body>
 
 <header>
-    <div class="full-strip vanity title-bar">
-        <div class="focus">
-            <h1>MODX Community Statistics <time>Since June 7th, 2014</time> </h1>
+    <a href="#community-stats">
+        <div class="full-strip vanity title-bar">
+            <div class="focus">
+                <h1>MODX Community Statistics <time datetime="2014-06-07">Since June 7th, 2014</time> </h1>
+            </div>
         </div>
-    </div>
+    </a>
     <div class="vanity">
         <div class="focus padded">
             <p>At the end of each hour we fire off a request to the MODX Forums and the GitHub API to retrieve some key metrics about the MODX Community activity. These statistics are then stored and shown to you, right here. Scroll to the bottom of the page to find the raw numbers.</p>
@@ -28,66 +30,72 @@
     </div>
 </header>
 
-<main class="vanity">
+<main class="vanity" id="community-stats">
     <div class="focus">
         <div class="block-wrapper">
             <div class="block block-recent-posts">
                 <div class="inner">
-                    <h2>Number of Recent Posts</h2>
+                    <h2 id="recent-posts">Number of Recent Posts</h2>
                     <p class="description">The Recent Posts forum page shows all posts that happened in the last 42 days. By keeping track of this metric you can get a good idea of the long term continued activity and how this fluctuates over time. </p>
                     <div class="graph-container" id="graph-recent-posts">
                         <div class="y_axis"></div>
                         <div class="chart"></div>
+                        <noscript>Please enable JavaScript to view our lovely SVG charts.</noscript>
                     </div>
                 </div>
             </div>
             <div class="block block-number-members">
                 <div class="inner">
-                    <h2>Number of Members</h2>
+                    <h2 id="number-of-members">Number of Members</h2>
                     <p class="description">The absolute number of registered users on the MODX forums. </p>
                     <div class="graph-container" id="graph-total-members">
                         <div class="y_axis"></div>
                         <div class="chart"></div>
+                        <noscript>Please enable JavaScript to view our lovely SVG charts.</noscript>
                     </div>
                 </div>
             </div>
             <div class="block block-number-posts">
                 <div class="inner">
-                    <h2>Number of Posts</h2>
+                    <h2 id="number-of-posts">Number of Posts</h2>
                     <p class="description">The absolute number of posts. </p>
                     <div class="graph-container" id="graph-total-posts">
                         <div class="y_axis"></div>
                         <div class="chart"></div>
+                        <noscript>Please enable JavaScript to view our lovely SVG charts.</noscript>
                     </div>
                 </div>
             </div>
             <div class="block block-number-threads">
                 <div class="inner">
-                    <h2>Number of Threads</h2>
+                    <h2 id="number-of-threads">Number of Threads</h2>
                     <p class="description">The absolute number of threads on the forum. </p>
                     <div class="graph-container" id="graph-total-threads">
                         <div class="y_axis"></div>
                         <div class="chart"></div>
+                        <noscript>Please enable JavaScript to view our lovely SVG charts.</noscript>
                     </div>
                 </div>
             </div>
             <div class="block block-number-github-open">
                 <div class="inner">
-                    <h2>Open Issues & Pull Requests</h2>
+                    <h2 id="open-issues-and-pull-requests">Open Issues &amp; Pull Requests</h2>
                     <p class="description">Find out what issues and pull requests are waiting to be addressed. We started tracking GitHub issues and pull requests on June 10th, 2014.</p>
                     <div class="graph-container" id="graph-total-github-open">
                         <div class="y_axis"></div>
                         <div class="chart"></div>
+                        <noscript>Please enable JavaScript to view our lovely SVG charts.</noscript>
                     </div>
                 </div>
             </div>
             <div class="block block-number-github-closed">
                 <div class="inner">
-                    <h2>Closed Issues & Pull Requests</h2>
+                    <h2 id="closed-issues-and-pull-requests">Closed Issues &amp; Pull Requests</h2>
                     <p class="description">Shows you recent activity in terms of closing issues and pull requests. We started tracking GitHub issues and pull requests on June 10th, 2014.</p>
                     <div class="graph-container" id="graph-total-github-closed">
                         <div class="y_axis"></div>
                         <div class="chart"></div>
+                        <noscript>Please enable JavaScript to view our lovely SVG charts.</noscript>
                     </div>
                 </div>
             </div>
@@ -96,7 +104,14 @@
         <div class="block-wrapper">
             <div class="block-raw-forum-stats">
                 <h3>Raw Forum Stats</h3>
-                <table>
+				<style type="text/css">
+				  .raw-forum-stats td:nth-of-type(1):before { content: "Date"; }
+				  .raw-forum-stats td:nth-of-type(2):before { content: "Posts in last 42 days"; }
+				  .raw-forum-stats td:nth-of-type(3):before { content: "Post Count"; }
+                  .raw-forum-stats td:nth-of-type(4):before { content: "Thread Count"; }
+                  .raw-forum-stats td:nth-of-type(5):before { content: "Member Count"; }
+				</style>
+                <table class="raw-forum-stats">
                     <thead>
                     <tr>
                         <td>Date</td>
@@ -115,7 +130,14 @@
         <div class="block-wrapper">
             <div class="block-raw-github-stats">
                 <h3>Raw GitHub Stats</h3>
-                <table>
+				<style type="text/css">
+				  .raw-github-stats td:nth-of-type(1):before { content: "Date"; }
+				  .raw-github-stats td:nth-of-type(2):before { content: "Open Issues"; }
+				  .raw-github-stats td:nth-of-type(3):before { content: "Open Pull Requests"; }
+                  .raw-github-stats td:nth-of-type(4):before { content: "Closed Issues"; }
+                  .raw-github-stats td:nth-of-type(5):before { content: "Closed Pull Requests"; }
+				</style>
+                <table class="raw-github-stats">
                     <thead>
                     <tr>
                         <td>Date</td>
@@ -135,9 +157,9 @@
 </main>
 
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="[[+assets_url]]rickshaw/vendor/d3.min.js"></script>
-<script src="[[+assets_url]]rickshaw/vendor/d3.layout.min.js"></script>
-<script src="[[+assets_url]]rickshaw/rickshaw.min.js"></script>
+<script src="[[+assets_url]]rickshaw/vendor/d3.min.js?eb68d3d1035789d3"></script>
+<script src="[[+assets_url]]rickshaw/vendor/d3.layout.min.js?4d73dea16077b0d7"></script>
+<script src="[[+assets_url]]rickshaw/rickshaw.min.js?fc927b6dd64118ca"></script>
 
 <script>
 $(document).on('ready', function() {

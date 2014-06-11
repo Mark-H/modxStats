@@ -1,0 +1,13 @@
+div.graph-container {
+    padding-right:50px;
+}
+
+div.chart.rickshaw_graph {
+    width:100%;
+    overflow:hidden;
+    svg {
+        width:100%;
+        height:auto;
+    }
+}
+

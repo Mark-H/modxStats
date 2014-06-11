@@ -1,0 +1,20 @@
+$modBlue: #1f4a7f;
+
+$headers:h1,h2,h3,h4,h5,h6;
+$topMost:99999;
+
+$desktop: new-breakpoint(max-width 960px 12);
+$cinema: new-breakpoint(max-width 1400px 12);
+$iphoneP: new-breakpoint(max-width 480px 4);
+$mobile: new-breakpoint(max-width 640px 4);
+$tabletP: new-breakpoint(max-width 768px 12);
+$tabletL: new-breakpoint(max-width 1024px 12); 
+
+$gtiphoneP: new-breakpoint(min-width 481px 4);
+$gtMobile: new-breakpoint(min-width 641px 12);
+$gtTabletP: new-breakpoint(min-width 769px 12);
+$gtTabletL: new-breakpoint(min-width 1025px 12);
+$gtDesktop: new-breakpoint(min-width 961px 12);
+$gtCinema: new-breakpoint(min-width 1401px 12);
+
+$breakTables: $desktop;
