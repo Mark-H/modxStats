@@ -12,6 +12,15 @@ class modxStatsWebStatsForumGenericProcessor extends modObjectGetListProcessor {
 
     /**
      * {@inheritDoc}
+     * @return boolean
+     */
+    public function initialize() {
+        $this->setProperty('limit', 0);
+        return parent::initialize();
+    }
+
+    /**
+     * {@inheritDoc}
      * @return mixed
      */
     public function process() {

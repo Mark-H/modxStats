@@ -11,6 +11,15 @@ class modxStatsWebStatsGithubClosedProcessor extends modObjectGetListProcessor {
     protected $seriesData = array();
 
     /**
+     * {@inheritDoc}
+     * @return boolean
+     */
+    public function initialize() {
+        $this->setProperty('limit', 0);
+        return parent::initialize();
+    }
+
+    /**
      * @param xPDOQuery $c
      * @return xPDOQuery
      */
