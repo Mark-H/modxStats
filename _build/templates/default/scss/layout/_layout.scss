@@ -1,0 +1,40 @@
+body {
+    padding:6em 0 0 0;
+    margin: 0;
+}
+
+.vanity {
+    .focus {
+        @include outer-container();
+        margin:0 auto;
+        &.padded {
+            padding-left:1em;
+            padding-right:1em;
+        }
+    }
+}
+
+#{$headers} {
+    color:$modBlue;
+    .full-strip & {
+        color:white;
+        line-height:1.6em;
+        margin:0;
+    }
+    margin-bottom:1em;
+}
+
+.title-bar {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:$topMost;
+}
+
+h1 {
+    time {
+        float:right;
+        font-size:0.4em;
+    }
+}
