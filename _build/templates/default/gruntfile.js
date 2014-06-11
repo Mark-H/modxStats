@@ -4,9 +4,11 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		dirs: { /* just defining some properties */
 			lib: './lib/',
+            tmp: './tmp/',
 			scss: './scss/',
 			theme: '../../../',
 			assets: 'assets/components/modxstats/',
+            components:'core/components/modxstats/',
 			css: 'css/',
 			js:  'js/',
 			img: 'img/'
@@ -82,7 +84,21 @@ module.exports = function(grunt) {
 				
 			}
 		},
-		
+        cacheBust: {
+            options: {
+                  enableUrlFragmentHint: false,
+                  //dir:'<%= dirs.theme %><%= dirs.assets %><%= dirs.css %>',
+                  /*filters: {
+                          'style' : [
+                              function() { return this.attribs['src'].replace('[[+asset_url]]','../../../../../assets/'); },
+                              function() { return this.attribs['src']; } // keep default 'src' mapper
+                          ]
+                  }*/
+            },
+            files: {
+                src: ['<%= dirs.tmp %>wrapper.chunk.tpl']
+            }
+        },
 		watch: { /* trigger tasks on save */
 			options: {
 				livereload: true 
@@ -104,12 +120,42 @@ module.exports = function(grunt) {
 				tasks: ['concat', 'growl:concat', 'uglify', 'growl:uglify']
 			}
 		},
+        replace:{
+            cb: {
+                options:{
+                    patterns:[
+                        {
+                            match:/\[\[\+assets_url]]/g,
+                            replacement:'../<%= dirs.theme %><%= dirs.assets %>'
+                        }
+                    ],
+                    usePrefix: false
+                },
+                files: [
+                {expand:true,flatten:true,src:['<%= dirs.theme %><%= dirs.components %>elements/chunks/wrapper.chunk.tpl'],dest:'<%= dirs.tmp %>'}
+                ]
+            },
+            ncb: {
+                options:{
+                    patterns:[
+                        {
+                            match:/..\/..\/..\/..\/assets\/components\/modxstats\//g,
+                            replacement:'[[+assets_url]]'
+                        }
+                    ],
+                    usePrefix: false
+                },
+                files: [
+                {expand:true,flatten:true,src:['<%= dirs.tmp %>wrapper.chunk.tpl'],dest:'<%= dirs.theme %><%= dirs.components %>elements/chunks/'}
+                ]
+            }
+        },
 		clean: { /* take out the trash */
 			options: {
 				force: true
 			},
 			prebuild: ['<%= dirs.scss %>bourbon', '<%= dirs.scss %>font-awesome'],
-			postbuild: ['<%= dirs.lib %>']
+			postbuild: ['<%= dirs.lib %>','<%= dirs.tmp %>']
 		},
 		growl: { /* optional growl notifications requires terminal-notifer: gem install terminal-notifier */
 			
@@ -137,6 +183,10 @@ module.exports = function(grunt) {
 			uglify: {
 				title: "grunt",
 				message: "JavaScript minified."
+			},
+			cachebust: {
+				title: "grunt",
+				message: "Cache busted."
 			}
 		}
 	};
@@ -167,6 +217,15 @@ module.exports = function(grunt) {
 			expand: true
 		}]
 	};
+    
+	initConfig.copy["wrapper"] = {
+		files: [{
+			src: 'wrapper.chunk.tpl',
+			cwd: '<%= dirs.theme %><%= dirs.components %>elements/chunks/',
+			dest: '<%= dirs.tmp %>',
+			expand: true
+		}]
+	};
 
 	grunt.initConfig(initConfig);
 	
@@ -184,7 +243,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	
+    grunt.loadNpmTasks('grunt-replace');
+    grunt.loadNpmTasks('grunt-cache-bust');
 
 	grunt.registerTask('default', ['sass:dist', 'cssmin', 'growl:sass', 'growl:watch', 'watch']);
-	grunt.registerTask('build', ['clean:prebuild', 'bower', 'copy', 'sass:dev', 'cssmin', 'concat', 'growl:sass', 'clean:postbuild']);
+	grunt.registerTask('build', ['clean:prebuild', 'bower', 'copy', 'sass:dev', 'cssmin', 'concat', 'growl:sass', 'cachebust']);
+    grunt.registerTask('cachebust',['replace:cb','cacheBust','replace:ncb','growl:cachebust','clean:postbuild']);
 };
