@@ -10,11 +10,13 @@
 <body>
 
 <header>
-    <div class="full-strip vanity title-bar">
-        <div class="focus">
-            <h1>MODX Community Statistics <time>Since June 7th, 2014</time> </h1>
+    <a href="#community-stats">
+        <div class="full-strip vanity title-bar">
+            <div class="focus">
+                <h1>MODX Community Statistics <time>Since June 7th, 2014</time> </h1>
+            </div>
         </div>
-    </div>
+    </a>
     <div class="vanity">
         <div class="focus padded">
             <p>At the end of each hour we fire off a request to the MODX Forums and the GitHub API to retrieve some key metrics about the MODX Community activity. These statistics are then stored and shown to you, right here. Scroll to the bottom of the page to find the raw numbers.</p>
@@ -28,7 +30,7 @@
     </div>
 </header>
 
-<main class="vanity">
+<main class="vanity" id="community-stats">
     <div class="focus">
         <div class="block-wrapper">
             <div class="block block-recent-posts">
