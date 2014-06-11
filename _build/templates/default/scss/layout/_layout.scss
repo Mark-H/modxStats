@@ -38,3 +38,9 @@ h1 {
         font-size:0.4em;
     }
 }
+
+.block {
+    .description {
+        min-height:6em; /* #janky */
+    }
+}
