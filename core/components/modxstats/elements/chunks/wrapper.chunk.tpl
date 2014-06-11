@@ -13,7 +13,7 @@
     <a href="#community-stats">
         <div class="full-strip vanity title-bar">
             <div class="focus">
-                <h1>MODX Community Statistics <time>Since June 7th, 2014</time> </h1>
+                <h1>MODX Community Statistics <time datetime="2014-06-07">Since June 7th, 2014</time> </h1>
             </div>
         </div>
     </a>
@@ -104,7 +104,14 @@
         <div class="block-wrapper">
             <div class="block-raw-forum-stats">
                 <h3>Raw Forum Stats</h3>
-                <table>
+				<style type="text/css">
+				  .raw-forum-stats td:nth-of-type(1):before { content: "Date"; }
+				  .raw-forum-stats td:nth-of-type(2):before { content: "Posts in last 42 days"; }
+				  .raw-forum-stats td:nth-of-type(3):before { content: "Post Count"; }
+                  .raw-forum-stats td:nth-of-type(4):before { content: "Thread Count"; }
+                  .raw-forum-stats td:nth-of-type(5):before { content: "Member Count"; }
+				</style>
+                <table class="raw-forum-stats">
                     <thead>
                     <tr>
                         <td>Date</td>
@@ -123,7 +130,14 @@
         <div class="block-wrapper">
             <div class="block-raw-github-stats">
                 <h3>Raw GitHub Stats</h3>
-                <table>
+				<style type="text/css">
+				  .raw-github-stats td:nth-of-type(1):before { content: "Date"; }
+				  .raw-github-stats td:nth-of-type(2):before { content: "Open Issues"; }
+				  .raw-github-stats td:nth-of-type(3):before { content: "Open Pull Requests"; }
+                  .raw-github-stats td:nth-of-type(4):before { content: "Closed Issues"; }
+                  .raw-github-stats td:nth-of-type(5):before { content: "Closed Pull Requests"; }
+				</style>
+                <table class="raw-github-stats">
                     <thead>
                     <tr>
                         <td>Date</td>

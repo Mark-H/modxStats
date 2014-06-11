@@ -12,12 +12,14 @@
     tbody {   
         tr {
             @include transition(background-color, 180ms ease-in);
-            &:nth-child(even) {
+            &:nth-child(odd) {
                 background-color:rgba(white,0.8);
             }
-            &:hover {
-                background-color:rgba($modBlue,0.9);
-                color:white;
+            @include media($gtDesktop) {
+                &:hover {
+                    background-color:rgba($modBlue,0.9);
+                    color:white;
+                }
             }
         }
     }

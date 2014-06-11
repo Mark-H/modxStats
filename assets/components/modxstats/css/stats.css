@@ -263,17 +263,24 @@ table tbody tr {
   -moz-transition: background-color, 180ms ease-in;
   transition: background-color, 180ms ease-in;
 }
-table tbody tr:nth-child(even) {
+table tbody tr:nth-child(odd) {
   background-color: rgba(255, 255, 255, 0.8);
 }
-table tbody tr:hover {
-  background-color: rgba(31, 74, 127, 0.9);
-  color: white;
+@media screen and (min-width: 961px) {
+  table tbody tr:hover {
+    background-color: rgba(31, 74, 127, 0.9);
+    color: white;
+  }
 }
 
 body {
   padding: 6em 0 0 0;
   margin: 0;
+}
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 0.9em;
+  }
 }
 
 .vanity .focus {
@@ -318,6 +325,77 @@ h1 time {
   font-size: 0.4em;
 }
 
+.block .description {
+  min-height: 6em;
+  /* #janky */
+}
+
+td {
+  word-wrap: break-word;
+  padding-right: 1em;
+}
+
+table td:before {
+  display: none;
+}
+@media screen and (max-width: 960px) {
+  table {
+    display: block;
+    /* Hide table headers (but not display: none;, for accessibility) */
+    /*
+    Label the data
+    */
+  }
+  table thead, table tbody, table th, table td, table tr {
+    display: block;
+  }
+  table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    z-index: 1;
+  }
+  table tr {
+    border: 1px solid #ccc;
+    border-bottom: none;
+  }
+  table td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+  table td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    z-index: 1;
+  }
+  table td:before {
+    display: block;
+    font-weight: bold;
+  }
+}
+
+div.graph-container {
+  padding-right: 50px;
+}
+
+div.chart.rickshaw_graph {
+  width: 100%;
+  overflow: hidden;
+}
+div.chart.rickshaw_graph svg {
+  width: 100%;
+  height: auto;
+}
+
 body {
   background-color: #eee;
   color: #333;
@@ -341,12 +419,16 @@ body {
 }
 
 .block {
-  width: 50%;
   padding: 15px 15px 0 0;
-  float: left;
 }
 .block:nth-child(odd) {
   clear: left;
+}
+@media screen and (min-width: 961px) {
+  .block {
+    width: 50%;
+    float: left;
+  }
 }
 .block .inner {
   border: 1px solid #ccc;
