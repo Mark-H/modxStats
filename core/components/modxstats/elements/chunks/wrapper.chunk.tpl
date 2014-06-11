@@ -35,61 +35,67 @@
         <div class="block-wrapper">
             <div class="block block-recent-posts">
                 <div class="inner">
-                    <h2>Number of Recent Posts</h2>
+                    <h2 id="recent-posts">Number of Recent Posts</h2>
                     <p class="description">The Recent Posts forum page shows all posts that happened in the last 42 days. By keeping track of this metric you can get a good idea of the long term continued activity and how this fluctuates over time. </p>
                     <div class="graph-container" id="graph-recent-posts">
                         <div class="y_axis"></div>
                         <div class="chart"></div>
+                        <noscript>We're sorry, your browser does not support SVG graphics. <a href="http://caniuse.com/svg">Learn&nbsp;more</a>.</noscript>
                     </div>
                 </div>
             </div>
             <div class="block block-number-members">
                 <div class="inner">
-                    <h2>Number of Members</h2>
+                    <h2 id="number-of-members">Number of Members</h2>
                     <p class="description">The absolute number of registered users on the MODX forums. </p>
                     <div class="graph-container" id="graph-total-members">
                         <div class="y_axis"></div>
                         <div class="chart"></div>
+                        <noscript>We're sorry, your browser does not support SVG graphics. <a href="http://caniuse.com/svg">Learn&nbsp;more</a>.</noscript>
                     </div>
                 </div>
             </div>
             <div class="block block-number-posts">
                 <div class="inner">
-                    <h2>Number of Posts</h2>
+                    <h2 id="number-of-posts">Number of Posts</h2>
                     <p class="description">The absolute number of posts. </p>
                     <div class="graph-container" id="graph-total-posts">
                         <div class="y_axis"></div>
                         <div class="chart"></div>
+                        <noscript>We're sorry, your browser does not support SVG graphics. <a href="http://caniuse.com/svg">Learn&nbsp;more</a>.</noscript>
                     </div>
                 </div>
             </div>
             <div class="block block-number-threads">
                 <div class="inner">
-                    <h2>Number of Threads</h2>
+                    <h2 id="number-of-threads">Number of Threads</h2>
                     <p class="description">The absolute number of threads on the forum. </p>
                     <div class="graph-container" id="graph-total-threads">
                         <div class="y_axis"></div>
                         <div class="chart"></div>
+                        <noscript>We're sorry, your browser does not support SVG graphics. <a href="http://caniuse.com/svg">Learn&nbsp;more</a>.</noscript>
                     </div>
                 </div>
             </div>
             <div class="block block-number-github-open">
                 <div class="inner">
-                    <h2>Open Issues & Pull Requests</h2>
+                    <h2 id="open-issues-and-pull-requests">Open Issues &amp; Pull Requests</h2>
                     <p class="description">Find out what issues and pull requests are waiting to be addressed. We started tracking GitHub issues and pull requests on June 10th, 2014.</p>
                     <div class="graph-container" id="graph-total-github-open">
                         <div class="y_axis"></div>
                         <div class="chart"></div>
+                        <noscript>We're sorry, your browser does not support SVG graphics. <a href="http://caniuse.com/svg">Learn&nbsp;more</a>.</noscript>
                     </div>
                 </div>
             </div>
             <div class="block block-number-github-closed">
                 <div class="inner">
-                    <h2>Closed Issues & Pull Requests</h2>
+                    <h2 id="closed-issues-and-pull-requests">Closed Issues &amp; Pull Requests</h2>
                     <p class="description">Shows you recent activity in terms of closing issues and pull requests. We started tracking GitHub issues and pull requests on June 10th, 2014.</p>
                     <div class="graph-container" id="graph-total-github-closed">
                         <div class="y_axis"></div>
                         <div class="chart"></div>
+                        <noscript>We're sorry, your browser does not support SVG graphics. <a href="http://caniuse.com/svg">Learn&nbsp;more</a>.</noscript>
                     </div>
                 </div>
             </div>
