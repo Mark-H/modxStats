@@ -12,16 +12,16 @@
 <header>
     <div class="full-strip vanity title-bar">
         <div class="focus">
-            <h1>MODX Community Statistics <time>June 7th, 2014</time> </h1>
+            <h1>MODX Community Statistics <time>Since June 7th, 2014</time> </h1>
         </div>
     </div>
     <div class="vanity">
         <div class="focus padded">
-            <p>Every hour a script is fired to collect some key metrics from the MODX forums. These are stored and shown to you, right here. Help improve this page! <a href="https://github.com/Mark-H/modxStats">Fork the repo on GitHub</a>, pull requests are very welcome.</p>
-            <p>Some welcome improvements include..</p>
-            <ul>
-                <li>Connection with Github to keep track of the number of open and closed issues and pull requests</li>
-                <li>Better design (well, *any* design really)</li>
+            <p>At the end of each hour we fire off a request to the MODX Forums and the GitHub API to retrieve some key metrics about the MODX Community activity. These statistics are then stored and shown to you, right here. Scroll to the bottom of the page to find the raw numbers.</p>
+            <p>Help improve this page! <a href="https://github.com/Mark-H/modxStats">Fork the repo on GitHub</a>, we very much appreciate pull requests. Some welcome improvements include..</p>
+            <ul class="disc">
+                <li>Taking the data and turning it into something more meaningful (week-over-week growth, for example)</li>
+                <li>Design improvements</li>
                 <li>Perhaps a way to download data; it is currently shown at the bottom in a simple table, but that will become unwieldy as more data is collected.</li>
             </ul>
         </div>
@@ -74,7 +74,7 @@
             <div class="block block-number-github-open">
                 <div class="inner">
                     <h2>Open Issues & Pull Requests</h2>
-                    <p class="description">Find out what issues and pull requests are waiting to be addressed.</p>
+                    <p class="description">Find out what issues and pull requests are waiting to be addressed. We started tracking GitHub issues and pull requests on June 10th, 2014.</p>
                     <div class="graph-container" id="graph-total-github-open">
                         <div class="y_axis"></div>
                         <div class="chart"></div>
@@ -84,7 +84,7 @@
             <div class="block block-number-github-closed">
                 <div class="inner">
                     <h2>Closed Issues & Pull Requests</h2>
-                    <p class="description">Shows you recent activity in terms of closing issues and pull requests.</p>
+                    <p class="description">Shows you recent activity in terms of closing issues and pull requests. We started tracking GitHub issues and pull requests on June 10th, 2014.</p>
                     <div class="graph-container" id="graph-total-github-closed">
                         <div class="y_axis"></div>
                         <div class="chart"></div>
@@ -135,9 +135,9 @@
 </main>
 
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="[[+assets_url]]/rickshaw/vendor/d3.min.js"></script>
-<script src="[[+assets_url]]/rickshaw/vendor/d3.layout.min.js"></script>
-<script src="[[+assets_url]]/rickshaw/rickshaw.min.js"></script>
+<script src="[[+assets_url]]rickshaw/vendor/d3.min.js"></script>
+<script src="[[+assets_url]]rickshaw/vendor/d3.layout.min.js"></script>
+<script src="[[+assets_url]]rickshaw/rickshaw.min.js"></script>
 
 <script>
 $(document).on('ready', function() {

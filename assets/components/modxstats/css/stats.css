@@ -370,4 +370,9 @@ body {
   width: 50px;
 }
 
+ul.disc {
+  list-style-type: disc;
+  padding-left: 30px;
+}
+
 /*# sourceMappingURL=stats.css.map */

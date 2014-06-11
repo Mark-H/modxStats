@@ -7,3 +7,8 @@
 @import "components/components";
 @import "layout/layout";
 @import "base/base";
+
+ul.disc {
+  list-style-type: disc;
+  padding-left: 30px;
+}
