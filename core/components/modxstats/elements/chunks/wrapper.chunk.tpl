@@ -166,25 +166,25 @@ $(document).on('ready', function() {
     newGraph($('#graph-recent-posts'), '[[+assets_url]]connector.php?action=web/stats/forum/recent', [
         {
             name: 'Recent Posts',
-            color: '#c05020'
+            color: '#f68e1e'
         }
     ]);
     newGraph($('#graph-total-members'), '[[+assets_url]]connector.php?action=web/stats/forum/members', [
         {
             name: 'Total # of Members',
-            color: '#c05020'
+            color: '#f68e1e'
         }
     ]);
     newGraph($('#graph-total-posts'), '[[+assets_url]]connector.php?action=web/stats/forum/posts', [
         {
             name: 'Posts',
-            color: '#c05020'
+            color: '#f68e1e'
         }
     ]);
     newGraph($('#graph-total-threads'), '[[+assets_url]]connector.php?action=web/stats/forum/threads', [
         {
             name: 'Threads',
-            color: '#c05020'
+            color: '#f68e1e'
         }
     ]);
     newGraph($('#graph-total-github-open'), '[[+assets_url]]connector.php?action=web/stats/github/open', [
@@ -193,7 +193,7 @@ $(document).on('ready', function() {
             color: '#0c0502'
         },{
             name: 'Open Issues',
-            color: '#c05020'
+            color: '#f68e1e'
         },
     ]);
     newGraph($('#graph-total-github-closed'), '[[+assets_url]]connector.php?action=web/stats/github/closed', [
@@ -202,7 +202,7 @@ $(document).on('ready', function() {
             color: '#0c0502'
         },{
             name: 'Closed Issues',
-            color: '#c05020'
+            color: '#f68e1e'
         },
     ]);
 

@@ -1,0 +1,31 @@
+{
+  "name": "modxStats",
+  "version": "0.0.0",
+  "author": {
+    "name": "",
+    "url": ""
+  },
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "dependencies": {
+    "rickshaw": "~1.5.0"
+  },
+  "exportsOverride": {
+    "bourbon": {
+      "": "app/assets/stylesheets/"
+    },
+    "neat": {
+      "": "app/assets/stylesheets/"
+    }
+  },
+  "devDependencies": {
+    "bourbon": "~3.1.8",
+    "neat": "~1.4.0"
+  }
+}
