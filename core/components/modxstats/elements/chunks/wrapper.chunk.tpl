@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>MODX Community Statistics</title>
 
-    <link href="[[+assets_url]]css/stats.css" rel="stylesheet">
-    <link href="[[+assets_url]]rickshaw/rickshaw.min.css" rel="stylesheet">
+    <link href="[[+assets_url]]css/stats.css?ad5372cb491c2527" rel="stylesheet">
+    <link href="[[+assets_url]]rickshaw/rickshaw.min.css?48a108292e153ef3" rel="stylesheet">
 </head>
 <body>
 
@@ -157,9 +157,9 @@
 </main>
 
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="[[+assets_url]]rickshaw/vendor/d3.min.js"></script>
-<script src="[[+assets_url]]rickshaw/vendor/d3.layout.min.js"></script>
-<script src="[[+assets_url]]rickshaw/rickshaw.min.js"></script>
+<script src="[[+assets_url]]rickshaw/vendor/d3.min.js?eb68d3d1035789d3"></script>
+<script src="[[+assets_url]]rickshaw/vendor/d3.layout.min.js?4d73dea16077b0d7"></script>
+<script src="[[+assets_url]]rickshaw/rickshaw.min.js?fc927b6dd64118ca"></script>
 
 <script>
 $(document).on('ready', function() {
