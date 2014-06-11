@@ -142,8 +142,9 @@
 <script>
 $(document).on('ready', function() {
     // Fix block heights so they appear nicely side by side
-    function newGraph (holder, dataUrl, series) {
-        return new Rickshaw.Graph.Ajax({
+    function newGraph (holder, dataUrl, series, options) {
+        options = options || { };
+        options = $.extend({ }, {
             element: holder.find('.chart').get(0),
             min: 'auto',
             width: holder.width() - 50, // 50px padding from the y-axis
@@ -174,7 +175,8 @@ $(document).on('ready', function() {
                 y_axis.render();
             },
             series: series
-        });
+        }, options);
+        return new Rickshaw.Graph.Ajax(options);
     };
 
     newGraph($('#graph-recent-posts'), '[[+assets_url]]connector.php?action=web/stats/forum/recent', [
@@ -209,7 +211,9 @@ $(document).on('ready', function() {
             name: 'Open Issues',
             color: '#f68e1e'
         },
-    ]);
+    ], {
+        min: 0
+    });
     newGraph($('#graph-total-github-closed'), '[[+assets_url]]connector.php?action=web/stats/github/closed', [
         {
             name: 'Closed Pull Requests',
@@ -218,7 +222,9 @@ $(document).on('ready', function() {
             name: 'Closed Issues',
             color: '#f68e1e'
         },
-    ]);
+    ], {
+        min: 0
+    });
 
     function formatNumber(num) {
         var parts = num.toString().split(".");
